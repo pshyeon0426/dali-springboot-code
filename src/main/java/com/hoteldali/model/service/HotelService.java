@@ -6,6 +6,7 @@ import java.util.List;
 import com.hoteldali.data.HotelRepository;
 import com.hoteldali.model.HotelDetailDto;
 import com.hoteldali.model.HotelDto;
+import com.hoteldali.model.HotelTopDto;
 import com.hoteldali.model.domain.Hotel;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,13 @@ public class HotelService {
 		this.hotelRepo = hotelRepo;
 	}
 
-    public List<HotelDto> listHotelTop10Details() {
+    public List<HotelTopDto> listHotelTop10Details() {
         List<Hotel> hotels = hotelRepo.findTop10ByOrderByViewcountDesc();
-        List<HotelDto> top10 = new ArrayList<HotelDto>();
+        List<HotelTopDto> top10 = new ArrayList<HotelTopDto>();
+        int rank = 1;
         for (Hotel hotel : hotels) {
-            top10.add(new HotelDto(hotel));
+            top10.add(new HotelTopDto(hotel, rank));
+            rank++;
         }
         return top10;
     }

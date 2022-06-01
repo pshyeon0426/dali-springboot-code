@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hoteldali.model.HotelDetailDto;
 import com.hoteldali.model.HotelDto;
+import com.hoteldali.model.HotelTopDto;
 import com.hoteldali.model.service.HotelService;
 
 import org.springframework.http.HttpStatus;
@@ -63,11 +64,11 @@ public class HotelController {
         return new ResponseEntity<List<String>>(hotelService.listHotelTop10(), status);
     }
 
-    @ApiOperation(value = "호텔 Top10 조회", notes = "Top10 호텔리스트 상세조회", response = List.class)
+    @ApiOperation(value = "호텔 Top10 리스트 조회", notes = "Top10 호텔리스트 상세조회", response = List.class)
 	@PostMapping("/top10/details")
-    public ResponseEntity<List<HotelDto>> listHotelTop10Details() {
+    public ResponseEntity<List<HotelTopDto>> listHotelTop10Details() {
         HttpStatus status = HttpStatus.OK;
-        return new ResponseEntity<List<HotelDto>>(hotelService.listHotelTop10Details(), status);
+        return new ResponseEntity<List<HotelTopDto>>(hotelService.listHotelTop10Details(), status);
     }
     
 
