@@ -30,6 +30,7 @@ public class UserController {
     
     private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
+    private static final String DUP = "duplicate";
     private static final String ERROR = "error case";
 
     private JwtService jwtService;

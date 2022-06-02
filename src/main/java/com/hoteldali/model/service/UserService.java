@@ -71,7 +71,7 @@ public class UserService implements UserDetailsService {
     }
 
     public boolean checkPhone(String phone) throws Exception {
-        User user = userRepo.findByEmail(phone);
+        User user = userRepo.findByPhone(phone);
         if (user != null) return true;
         else return false;
     }
