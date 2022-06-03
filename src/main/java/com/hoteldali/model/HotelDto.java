@@ -21,9 +21,9 @@ public class HotelDto {
     private double lat;
     private double lng;
 
-    public Hotel toEntity() {
-        return new Hotel(namekor, nameeng, location, star, details, category, viewcount, recentcount, lat, lng);
-    }
+    //public Hotel toEntity() {
+    //    return new Hotel(namekor, nameeng, location, star, details, category, viewcount, recentcount, lat, lng);
+    //}
 
     public HotelDto(Hotel hotel) {
         this.namekor = hotel.getNamekor();

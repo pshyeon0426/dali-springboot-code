@@ -44,6 +44,12 @@ public class Hotel {
     @Column
     private final double lat;
     @Column
-    private final double lng; 
+    private final double lng;
+    @Column
+    private final double score;
+    @Column(columnDefinition = "text")
+    private final String summary;
+    @Column
+    private final int reviewnum;
 
 }
